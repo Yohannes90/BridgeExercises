@@ -74,3 +74,17 @@ class Questions:
 
     print("Question 5")
     print(second_largest_number([45, 34, 5, 34, 6, 346, 34, 6, 457]))
+
+    #6. Write a function that takes a string as input and returns True if
+    # the string is a palindrome and False otherwise.
+    def check_palindrome(string_input1):
+        x = len(string_input1)
+        for i in range(x//2):
+            if (string_input1[i] != string_input1[x-i-1]):
+                return False
+        return True
+
+    print("Question 6")
+    print(check_palindrome("hannah"))
+    print(check_palindrome("stars"))
+    print(check_palindrome("racecar"))
