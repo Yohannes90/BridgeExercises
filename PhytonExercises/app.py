@@ -114,3 +114,15 @@ class Questions:
     print(common_elements([1, 2, 3, 4, 5], [5, 5, 7, 3, 2]))
     print(common_elements([1, 2, 3, 4, 5], [6, 7, 8, 9]))
 
+    #9. Write a function that takes a list of integers as input and returns
+    # the sum of all the elements in the list that are divisible by 3 or 5.
+    def sum_of_multiple3or5(numbers4):
+        sum = 0
+        for i in numbers4:
+            if (i % 3 == 0) or (i % 5 == 0):
+                sum += i
+        return sum
+
+    print("Question 9")
+    print(sum_of_multiple3or5([45, 34, 5, 34, 6, 346, 34, 6, 457]))
+    print(sum_of_multiple3or5([40, 30, 5, 34, 6, 7, 34, 7, 457]))
