@@ -46,3 +46,15 @@ class Questions:
         return new_string
     print("Question 3")
     print(four_strings(["C#", "C++", "Python", "Java"]))
+
+    #4. Write a function that takes a list of integers as input and returns
+    # the largest difference between any two adjacent numbers.
+    def largest_difference(numbers2):
+        max_diff = 0
+        for i in range(len(numbers2)):
+            for j in range(i + 1, len(numbers2)):
+                if (abs(numbers2[i] - numbers2[j])) > max_diff:
+                    max_diff = abs(numbers2[i] - numbers2[j])
+        return max_diff
+    print("Question 4")
+    print(largest_difference([45,34,5,34,6,346,34,6,457]))
