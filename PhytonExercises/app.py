@@ -88,3 +88,15 @@ class Questions:
     print(check_palindrome("hannah"))
     print(check_palindrome("stars"))
     print(check_palindrome("racecar"))
+
+    #7. Write a function that takes a list of strings as input and
+    # returns a new list with all the strings in reverse order.
+    def reverse_strings(list_of_strings2):
+        new_string1 = []
+        for i in list_of_strings2:
+            new_string1.append(i [::-1])
+    # i used [::-1] because python does not have function to reverse string
+        return new_string1
+
+    print("Question 7")
+    print(reverse_strings(["C#", "C++", "Python", "Java"]))
