@@ -58,3 +58,19 @@ class Questions:
         return max_diff
     print("Question 4")
     print(largest_difference([45,34,5,34,6,346,34,6,457]))
+
+    # 5. Write a function that takes a list of integers as input and
+    # returns the second largest number in the list.
+    def second_largest_number(numbers3):
+        largest = 0
+        second = 0
+        for i in numbers3:
+            if i > largest:
+                second = largest
+                largest = i
+            elif i > second:
+                second = i
+        return second
+
+    print("Question 5")
+    print(second_largest_number([45, 34, 5, 34, 6, 346, 34, 6, 457]))
