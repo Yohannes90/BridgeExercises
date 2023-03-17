@@ -14,9 +14,9 @@ class Questions:
     # 1. Write a function that takes a list of integers as input
     # and returns a new list with all the even numbers doubled
     # and all the odd numbers replaced with -1.
-    def new_list(numbers1):
+    def new_list(numbers):
         new = []
-        for i in numbers1:
+        for i in numbers:
             if i % 2 == 0:
                 new.append(i * 2)
             else:
@@ -49,22 +49,22 @@ class Questions:
 
     #4. Write a function that takes a list of integers as input and returns
     # the largest difference between any two adjacent numbers.
-    def largest_difference(numbers2):
+    def largest_difference(numbers):
         max_diff = 0
-        for i in range(len(numbers2)):
-            for j in range(i + 1, len(numbers2)):
-                if (abs(numbers2[i] - numbers2[j])) > max_diff:
-                    max_diff = abs(numbers2[i] - numbers2[j])
+        for i in range(len(numbers)):
+            for j in range(i + 1, len(numbers)):
+                if (abs(numbers[i] - numbers[j])) > max_diff:
+                    max_diff = abs(numbers[i] - numbers[j])
         return max_diff
     print("Question 4")
     print(largest_difference([45,34,5,34,6,346,34,6,457]))
 
     # 5. Write a function that takes a list of integers as input and
     # returns the second largest number in the list.
-    def second_largest_number(numbers3):
+    def second_largest_number(numbers):
         largest = 0
         second = 0
-        for i in numbers3:
+        for i in numbers:
             if i > largest:
                 second = largest
                 largest = i
@@ -77,10 +77,10 @@ class Questions:
 
     #6. Write a function that takes a string as input and returns True if
     # the string is a palindrome and False otherwise.
-    def check_palindrome(string_input1):
-        x = len(string_input1)
+    def check_palindrome(string_input):
+        x = len(string_input)
         for i in range(x//2):
-            if (string_input1[i] != string_input1[x-i-1]):
+            if (string_input[i] != string_input[x-i-1]):
                 return False
         return True
 
@@ -91,9 +91,9 @@ class Questions:
 
     #7. Write a function that takes a list of strings as input and
     # returns a new list with all the strings in reverse order.
-    def reverse_strings(list_of_strings2):
+    def reverse_strings(list_of_strings):
         new_string1 = []
-        for i in list_of_strings2:
+        for i in list_of_strings:
             new_string1.append(i [::-1])
     # i used [::-1] because python does not have function to reverse string
         return new_string1
@@ -116,9 +116,9 @@ class Questions:
 
     #9. Write a function that takes a list of integers as input and returns
     # the sum of all the elements in the list that are divisible by 3 or 5.
-    def sum_of_multiple3or5(numbers4):
+    def sum_of_multiple3or5(numbers):
         sum = 0
-        for i in numbers4:
+        for i in numbers:
             if (i % 3 == 0) or (i % 5 == 0):
                 sum += i
         return sum
@@ -126,3 +126,26 @@ class Questions:
     print("Question 9")
     print(sum_of_multiple3or5([45, 34, 5, 34, 6, 346, 34, 6, 457]))
     print(sum_of_multiple3or5([40, 30, 5, 34, 6, 7, 34, 7, 457]))
+
+    #10. Write a function that takes a string as input and returns
+    # a new string with the first letter of each word capitalized
+    def capitalize_first_letters(string):
+        new_str = ""
+        for i in range(len(string)):
+            if (i == 0 or string[i - 1] == ' '):
+                new_str += string[i].upper()
+            else:
+                new_str += string[i]
+        return new_str
+
+    print("Question 10")
+    print(capitalize_first_letters("this is the assignment we were given to learn Python"))
+
+    #Doing this assignment
+    # I learned more about functions in python
+    # Variable scope in python
+    # got more familier with for loop
+
+    # a bit confused about i-- in for loop??
+    # is for i in x like for each loop in java
+    # for i in range(y, x) like for(i = y; i <= x; i++)
