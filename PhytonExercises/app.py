@@ -100,3 +100,17 @@ class Questions:
 
     print("Question 7")
     print(reverse_strings(["C#", "C++", "Python", "Java"]))
+
+    #8. Write a function that takes two lists as input and returns
+    # a new list with all the elements that are common to both lists.
+    def common_elements(list_input1, list_input2):
+        common = []
+        for element in list_input1:
+            if element in list_input2:
+                common.append(element)
+        return common
+
+    print("Question 8")
+    print(common_elements([1, 2, 3, 4, 5], [5, 5, 7, 3, 2]))
+    print(common_elements([1, 2, 3, 4, 5], [6, 7, 8, 9]))
+
