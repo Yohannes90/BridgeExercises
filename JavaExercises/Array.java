@@ -17,13 +17,13 @@ public class Array {
         count++;
     }
     void deleteElement(int index) {
-        int[] temp = new int[size + 1];
+        int[] temp = new int[size - 1];
         for (int i = 0; i < index; i++)
         {
             temp[i] = array[i];
         }
         temp[index] = value;
-        for (int i = index; i < size + 1; i++)
+        for (int i = index; i < size - 1; i++)
         {
             temp[i + 1] = array[i];
         }
