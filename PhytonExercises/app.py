@@ -50,14 +50,13 @@ class Questions:
     #4. Write a function that takes a list of integers as input and returns
     # the largest difference between any two adjacent numbers.
     def largest_difference(numbers):
-        max_diff = 0
-        for i in range(len(numbers)):
-            for j in range(i + 1, len(numbers)):
-                if (abs(numbers[i] - numbers[j])) > max_diff:
-                    max_diff = abs(numbers[i] - numbers[j])
-        return max_diff
+        difference = numbers[0] - numbers[1]
+        for i in range(0, len(numbers) - 1):
+            if abs(numbers[i + 1] - numbers[i]) > difference:
+                difference = abs(numbers[i + 1] - numbers[i])
+        return difference
     print("Question 4")
-    print(largest_difference([45,34,5,34,6,346,34,6,457]))
+    print(largest_difference([5, 15, 27, 3, 28]))    
 
     # 5. Write a function that takes a list of integers as input and
     # returns the second largest number in the list.
