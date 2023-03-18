@@ -149,3 +149,4 @@ class Questions:
     # a bit confused about i-- in for loop??
     # is for i in x like for each loop in java
     # for i in range(y, x) like for(i = y; i <= x; i++)
+    # there is .remove function
