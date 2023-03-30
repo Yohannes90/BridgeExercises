@@ -56,7 +56,11 @@ class Questions:
                 difference = abs(numbers[i + 1] - numbers[i])
         return difference
     print("Question 4")
+<<<<<<< HEAD
     print(largest_difference([5, 15, 27, 3, 28]))
+=======
+    print(largest_difference([5, 15, 27, 3, 28]))    
+>>>>>>> 6152a49f30c2f58b9ba59bb8a76a5cbd87c1f8b8
 
     # 5. Write a function that takes a list of integers as input and
     # returns the second largest number in the list.
