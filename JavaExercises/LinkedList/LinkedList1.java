@@ -90,8 +90,8 @@ public class LinkedList1 {
             if (i == 0)
                 first.nextNode = null;
             else
-                first = temp;
-
+                first.nextNode = temp;
+            first = temp;
         }
     }
 }
