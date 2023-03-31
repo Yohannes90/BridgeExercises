@@ -23,12 +23,10 @@ public class ArrayList1 {
         for (int i = 0; i < index ; i++)
         {
             temp[i] = array[i];
-            System.out.println(Arrays.toString(temp));
         }
         for (int i = index; i < size - 1; i++)
         {
             temp[i] = array[i + 1];
-            System.out.println(Arrays.toString(temp));
         }
         array = temp;
 
@@ -38,17 +36,31 @@ public class ArrayList1 {
     }
     void insertElement(int index, int value) {
         int[] temp = new int[size + 1];
-        for (int i = 0; i < index; i++)
+        for (int i = 0; i < size - 1; i++)
         {
-            temp[i] = array[i];
-        }
-        temp[index] = value;
-        for (int i = index; i < size - 1; i++)
-        {
-            temp[i + 1] = array[i];
+            if (i < index)
+                temp[i] = array[i];
+            if (i == index)
+                temp[index] = value;
+            if (i >= index)
+                temp[i + 1] = array[i];
         }
         array = temp;
     }
+    int indexOf(int value)
+    {
+        for(int i = 0; i < count; i++)
+        {
+            if(array[i] == value)
+                return i;
+        }
+        return -1;
+    }
+    int size()
+    {
+        return count;
+    }
+
     void printElements() {
         System.out.println(Arrays.toString(array));
     }

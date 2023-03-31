@@ -1,4 +1,4 @@
-public class Main {
+public class Mainn {
     public static void main(String[] args) {
         ArrayList1 numbers = new ArrayList1(4);
         numbers.addElement(45);
@@ -19,5 +19,8 @@ public class Main {
 
         numbers.insertElement(5, 3420);
         numbers.printElements();
+        System.out.println(numbers.size());
+        System.out.println("element at index 4 is " + numbers.indexOf(4));
+        System.out.println("element at index 3 is " + numbers.indexOf(3));
     }
 }
