@@ -3,6 +3,7 @@ public class LinkedList1 {
     private Node first;
     private Node last;
     private int  size = 0;
+
     public class Node {
         int value;
         Node nextNode;
@@ -11,6 +12,7 @@ public class LinkedList1 {
             nextNode = null;
         }
     }
+
     void addElement(int value) {
         Node node = new Node(value);
         if (first == null)
@@ -21,26 +23,29 @@ public class LinkedList1 {
         }
         size++;
     }
+
     void addFirstElement(int value) {
         Node node = new Node(value);
         node.nextNode = first;
         first = node;
         size++;
     }
+
     void addLastElement(int value) {
         Node node = new Node(value);
         last.nextNode = node;
         last = node;
         size++;
     }
+
     void removeFirstElement() {
-        var temp = first.nextNode;
-        first.value = 0;
-        first.nextNode = null;
+        Node temp = first.nextNode;
         first = temp;
+        size--;
     }
+
     void removeLastElement() {
-        var temp = first;
+        Node temp = first;
         for (int i = 0; i < size - 2; i++) {
             temp = temp.nextNode;
         }
@@ -48,29 +53,33 @@ public class LinkedList1 {
         last = temp;
         size--;
     }
+
     void printElements() {
         var temp = first;
-        for (int i = 0; i < size - 1; i++) {
+        for (int i = 0; i < size; i++) {
             System.out.println(temp.value);
             temp = temp.nextNode;
         }
     }
-    void toArray(){
+
+    int[] toArray(){
         int[] toArray = new int[size];
         var temp = first;
         for (int i = 0; i < size - 1; i++) {
             toArray[i] = temp.value;
             temp = temp.nextNode;
         }
-
+        return toArray;
     }
+
     boolean isEmpty() {
         if (size == 0)
             return true;
         return false;
     }
+
     boolean contains(int value){
-        var temp = first;
+        Node temp = first;
         for (int i = 0; i < size; i++) {
             if (value == temp.value)
                 return true;
@@ -78,6 +87,7 @@ public class LinkedList1 {
         }
         return  false;
     }
+
     void reverse(){
         Node prev;
         Node curr = first;
@@ -88,11 +98,5 @@ public class LinkedList1 {
             prev = curr;
             curr = next;
         }
-//        for (int i = 0; i < size - 1; i++) {
-//            var temp = first.nextNode;
-//            first.nextNode = null;
-//            temp.nextNode = first;
-//            first = first.nextNode;
-//        }
     }
 }

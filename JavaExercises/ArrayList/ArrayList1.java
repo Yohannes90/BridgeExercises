@@ -4,10 +4,12 @@ public class ArrayList1 {
     private int [] array;
     private int size;
     private int count = 0;
+
     ArrayList1(int size){
         this.size = size;
         array = new int[size];
     }
+
     void addElement(int value) {
         if (count == (size)) {
             int[] temp = new int[size * 2];
@@ -18,6 +20,7 @@ public class ArrayList1 {
         array[count] = value;
         count++;
     }
+
     void deleteElement(int index) {
         int[] temp = new int[size - 1];
         for (int i = 0; i < index ; i++)
@@ -29,11 +32,12 @@ public class ArrayList1 {
             temp[i] = array[i + 1];
         }
         array = temp;
-
     }
+
     void updateElement(int index, int value) {
         array[index] = value;
     }
+
     void insertElement(int index, int value) {
         int[] temp = new int[size + 1];
         for (int i = 0; i < size - 1; i++)
@@ -47,6 +51,7 @@ public class ArrayList1 {
         }
         array = temp;
     }
+
     int indexOf(int value)
     {
         for(int i = 0; i < count; i++)
@@ -56,6 +61,7 @@ public class ArrayList1 {
         }
         return -1;
     }
+
     int size()
     {
         return count;

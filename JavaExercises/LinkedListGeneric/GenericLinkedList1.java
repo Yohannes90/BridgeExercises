@@ -3,6 +3,7 @@ public class GenericLinkedList1<T> {
     private Node first;
     private Node last;
     private int  size = 0;
+
     public class Node<T> {
         T item;
         Node nextNode;
@@ -11,6 +12,7 @@ public class GenericLinkedList1<T> {
             nextNode = null;
         }
     }
+
     void addElement(T value) {
         Node node = new Node(value);
         if (first == null)
@@ -21,23 +23,27 @@ public class GenericLinkedList1<T> {
         }
         size++;
     }
+
     void addFirstElement(T value) {
         Node node = new Node(value);
         node.nextNode = first;
         first = node;
         size++;
     }
+
     void addLastElement(T value) {
         Node node = new Node(value);
         last.nextNode = node;
         last = node;
         size++;
     }
+
     void removeFirstElement() {
         Node temp = first.nextNode;
         first = temp;
         size--;
     }
+
     void removeLastElement() {
         var temp = first;
         for (int i = 0; i < size - 2; i++) {
@@ -47,6 +53,7 @@ public class GenericLinkedList1<T> {
         last = temp;
         size--;
     }
+
     void printElements() {
         var temp = first;
         for (int i = 0; i < size; i++) {
@@ -54,6 +61,7 @@ public class GenericLinkedList1<T> {
             temp = temp.nextNode;
         }
     }
+
     void toArray(){
         T[] toArray = (T[]) new Object[size];
         var temp = first;
@@ -61,13 +69,14 @@ public class GenericLinkedList1<T> {
             toArray[i] = (T) temp.item;
             temp = temp.nextNode;
         }
-
     }
+
     boolean isEmpty() {
         if (size == 0)
             return true;
         return false;
     }
+
     boolean contains(T value){
         var temp = first;
         for (int i = 0; i < size; i++) {
@@ -77,6 +86,7 @@ public class GenericLinkedList1<T> {
         }
         return  false;
     }
+
     void reverse() {
         Node prev = null;
         Node curr = first;

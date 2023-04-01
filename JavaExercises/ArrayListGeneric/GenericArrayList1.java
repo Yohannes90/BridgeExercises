@@ -9,6 +9,7 @@ public class GenericArrayList1<T> {
         this.size = size;
         list = (T[]) new Object[size];
     }
+
     void addElement(T item)
     {
         if (count == size)
@@ -21,6 +22,7 @@ public class GenericArrayList1<T> {
         list[count] = item;
         count++;
     }
+
     void deleteElement(int index) {
         T[] temp = (T[]) new Object[size - 1];
         for (int i = 0; i < index ; i++)
@@ -33,9 +35,11 @@ public class GenericArrayList1<T> {
         }
         list = temp;
     }
+
     void updateElement(int index, T value) {
         list[index] = value;
     }
+
     void insertElement(int index, T value) {
         T[] temp = (T[]) new Object[size + 1];
         for (int i = 0; i < size - 1; i++)
@@ -49,6 +53,7 @@ public class GenericArrayList1<T> {
         }
         list = temp;
     }
+
     int indexOf(T item)
     {
         for(int i = 0; i < count; i++)
@@ -58,9 +63,11 @@ public class GenericArrayList1<T> {
         }
         return -1;
     }
+
     void printElements() {
         System.out.println(Arrays.toString(list));
     }
+
     int size()
     {
         return count;
