@@ -38,22 +38,19 @@ public class LinkedList1 {
         first.value = 0;
         first.nextNode = null;
         first = temp;
-        // Why do we have to change the value of first,
-        // won't it work if we just break reference so that the garbage collection can take care of it.
     }
     void removeLastElement() {
         var temp = first;
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size - 2; i++) {
             temp = temp.nextNode;
-            if (i == size - 1) {
-                temp.nextNode = null;
-            }
         }
+        temp.nextNode = null;
+        last = temp;
         size--;
     }
     void printElements() {
         var temp = first;
-        for (int i = 0; i < size-1; i++) {
+        for (int i = 0; i < size - 1; i++) {
             System.out.println(temp.value);
             temp = temp.nextNode;
         }
@@ -61,20 +58,18 @@ public class LinkedList1 {
     void toArray(){
         int[] toArray = new int[size];
         var temp = first;
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size - 1; i++) {
             toArray[i] = temp.value;
             temp = temp.nextNode;
         }
 
     }
     boolean isEmpty() {
-        //check if the linked list is empty and return boolean value
         if (size == 0)
             return true;
         return false;
     }
     boolean contains(int value){
-        //check if the linked list contains the value and return boolean value if there are elements
         var temp = first;
         for (int i = 0; i < size; i++) {
             if (value == temp.value)
@@ -84,14 +79,20 @@ public class LinkedList1 {
         return  false;
     }
     void reverse(){
-        //reverse the linked list
-        for (int i = 0; i < size - 1; i++) {
-            var temp = first.nextNode;
-            if (i == 0)
-                first.nextNode = null;
-            else
-                first.nextNode = temp;
-            first = temp;
+        Node prev;
+        Node curr = first;
+        Node next;
+        while (current != null) {
+            next = curr.next;
+            curr.nextNode = prev;
+            prev = curr;
+            curr = next;
         }
+//        for (int i = 0; i < size - 1; i++) {
+//            var temp = first.nextNode;
+//            first.nextNode = null;
+//            temp.nextNode = first;
+//            first = first.nextNode;
+//        }
     }
 }

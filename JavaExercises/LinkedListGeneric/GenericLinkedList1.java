@@ -34,26 +34,22 @@ public class GenericLinkedList1<T> {
         size++;
     }
     void removeFirstElement() {
-        var temp = first.nextNode;
-        first.item = 0;
-        first.nextNode = null;
+        Node temp = first.nextNode;
         first = temp;
-        // Why do we have to change the value of first,
-        // won't it work if we just break reference so that the garbage collection can take care of it.
+        size--;
     }
     void removeLastElement() {
         var temp = first;
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size - 2; i++) {
             temp = temp.nextNode;
-            if (i == size - 1) {
-                temp.nextNode = null;
-            }
         }
+        temp.nextNode = null;
+        last = temp;
         size--;
     }
     void printElements() {
         var temp = first;
-        for (int i = 0; i < size-1; i++) {
+        for (int i = 0; i < size; i++) {
             System.out.println(temp.item);
             temp = temp.nextNode;
         }
@@ -68,13 +64,11 @@ public class GenericLinkedList1<T> {
 
     }
     boolean isEmpty() {
-        //check if the linked list is empty and return boolean value
         if (size == 0)
             return true;
         return false;
     }
     boolean contains(T value){
-        //check if the linked list contains the value and return boolean value if there are elements
         var temp = first;
         for (int i = 0; i < size; i++) {
             if (value == temp.item)
@@ -83,15 +77,16 @@ public class GenericLinkedList1<T> {
         }
         return  false;
     }
-    void reverse(){
-        //reverse the linked list
-        for (int i = 0; i < size - 1; i++) {
-            var temp = first.nextNode;
-            if (i == 0)
-                first.nextNode = null;
-            else
-                first = temp;
-
+    void reverse() {
+        Node prev = null;
+        Node curr = first;
+        Node next = null;
+        while (curr != null) {
+            next = curr.nextNode;
+            curr.nextNode = prev;
+            prev = curr;
+            curr = next;
         }
+        first = prev;
     }
 }

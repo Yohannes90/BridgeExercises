@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 public class Mainn {
     public static void main(String[] args) {
         ArrayList1 numbers = new ArrayList1(4);
@@ -22,5 +24,6 @@ public class Mainn {
         System.out.println(numbers.size());
         System.out.println("element at index 4 is " + numbers.indexOf(4));
         System.out.println("element at index 3 is " + numbers.indexOf(3));
+
     }
 }
