@@ -18,7 +18,6 @@ Public class GenericStack1<T> {
     }
 
     public T peek() {
-        //insert your code here
         if (top > 0) {
             T value = elements[top];
             return value;
