@@ -20,6 +20,5 @@ public class Main {
         System.out.println("is Empty " + queue.isEmpty());
 
         System.out.println("to String" + queue.toString());
-
     }
 }
