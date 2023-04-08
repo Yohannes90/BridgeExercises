@@ -1,8 +1,8 @@
-Public class Stack<T> {
+Public class GenericStack1<T> {
     private T[] elements;
     private int top;
 
-    public Stack() {
+    public GenericStack1() {
         elements = (T[]) new Object[10];
         top = -1;
     }
